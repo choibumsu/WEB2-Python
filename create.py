@@ -2,12 +2,9 @@
 print("content-type:text/html; charset:utf-8\n")
 print()
 
-import cgi, os
+import cgi, os, view
 
-listStr=''
-files = os.listdir('data')
-for item in files:
-    listStr = listStr + '<li> <a href="index.py?id={name}">{name}</a></li>'.format(name=item)
+listStr=view.mklist()
 
 print('''
 <!doctype html>
